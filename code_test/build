@@ -1,0 +1,4 @@
+cc_binary(
+    name = "function_test",
+    srcs = ["function_test.cc"],
+)
