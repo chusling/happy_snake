@@ -1,0 +1,9 @@
+syntax = "proto3";
+package happy_snake;
+
+  message snake {
+  string name = 1;
+  int32 length = 2;
+  int32 tail = 3;
+  int32 head = 4;
+  }

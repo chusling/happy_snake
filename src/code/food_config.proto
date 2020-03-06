@@ -1,0 +1,10 @@
+syntax = "proto3";
+package happy_snake;
+
+message food {
+  string query = 1;
+  int32 time = 2;
+  int32 local_x = 3;
+  int32 local_y = 4;
+  }
+  
