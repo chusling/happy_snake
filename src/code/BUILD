@@ -1,12 +1,8 @@
 
 cc_library(
     name = "snake_lib",
-    srcs = ["food.cc",
-            "wall.cc",
-            "snake.cc",],
-    hdrs = ["food.h",
-            "snake.h",
-            "wall.h",],
+    srcs = glob(["*.cc"]),
+    hdrs =  glob(["*.h"]),
 )
 
 cc_binary(
@@ -14,8 +10,28 @@ cc_binary(
     srcs = ["game.cc"],
     deps = [
         ":snake_lib",
-    ],
-    linkopts = ["-lncurses ",
-                "-lprotobuf ",],
+        ],
+    linkopts = ["-lncurses",
+                "-lprotobuf",
+                "-pthread",],
 )
 
+cc_proto_library(
+    name = "happy_snake_proto",
+    deps = [
+        ":happy_snake_lib",
+    ],
+    visibility = [
+        "//visibility:public",],
+)
+
+proto_library(
+    name = "happy_snake_lib",
+    srcs = [
+        "food_config.proto",
+        "wall_config.proto",
+        "snake_config.proto",],
+    visibility = [
+        "//visibility:public",
+    ],
+)

@@ -5,14 +5,20 @@
 /**********************************************/
 #pragma once
 
-#include <stdio.h>
-#include <iostream>
+#include "common.h"
+
 namespace happy_snake {
     
 class wall {
 
 private:
-    
+    int name_x_;
+    int name_y_;
+    // char name_[20] =  "****Happy_Snake****" ;
+    // std::string Name_1 = "hello";
+    const char Name_[20] = "****Happy_Snake****";
+    char Snake_[20] = "@";
+    int DELAY_ = 30000; 
     /* data */
 public:
     wall(/* args */) = default;

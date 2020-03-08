@@ -1,6 +1,7 @@
 #include <ncurses.h>
 #include <unistd.h>
-
+#include <stdio.h>
+#include <iostream>
 #define DELAY 30000
 
 int main(int argc, char *argv[])
@@ -49,4 +50,5 @@ int main(int argc, char *argv[])
 			}
 		}
 	endwin();  /* 恢复终端 */
+	std::cout<<"who are you";
 }
